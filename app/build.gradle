@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -31,7 +31,7 @@ dependencies {
     //6.Glide显示图片的依赖。
     compile 'com.github.bumptech.glide:glide:3.7.0'
     //10.butterKnife 的依赖
-    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.jakewharton:butterknife:8.5.1'
     //12，Okhttp请求依赖
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
     //13， XRecyclerView 依赖：
@@ -47,6 +47,7 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
 //okhttp
     compile 'com.squareup.okhttp3:okhttp:3.6.0'
+
     compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     // 16.retrofit依赖
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
