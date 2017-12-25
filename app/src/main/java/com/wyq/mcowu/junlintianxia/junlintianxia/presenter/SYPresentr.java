@@ -1,8 +1,8 @@
-package com.wyq.mcowu.junlintianxia.junlintianxia.Presenter;
+package com.wyq.mcowu.junlintianxia.junlintianxia.presenter;
 
 
-import com.wyq.mcowu.junlintianxia.junlintianxia.Bean.SYBean;
-import com.wyq.mcowu.junlintianxia.junlintianxia.Model.MyModel;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.model.MyModel;
 import com.wyq.mcowu.junlintianxia.junlintianxia.base.BasePresenter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.MyView;
 

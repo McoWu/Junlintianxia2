@@ -1,4 +1,4 @@
-package com.wyq.mcowu.junlintianxia.junlintianxia.Adapter;
+package com.wyq.mcowu.junlintianxia.junlintianxia.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +10,7 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wyq.mcowu.junlintianxia.R;
-import com.wyq.mcowu.junlintianxia.junlintianxia.Bean.SYBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
 
 import java.util.ArrayList;
 import java.util.List;

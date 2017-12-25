@@ -1,7 +1,7 @@
 package com.wyq.mcowu.junlintianxia.junlintianxia.view.activity;
 
 
-import com.wyq.mcowu.junlintianxia.junlintianxia.Bean.SYBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
 
 import java.util.List;
 

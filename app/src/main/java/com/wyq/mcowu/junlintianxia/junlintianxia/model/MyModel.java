@@ -1,7 +1,7 @@
-package com.wyq.mcowu.junlintianxia.junlintianxia.Model;
+package com.wyq.mcowu.junlintianxia.junlintianxia.model;
 
 
-import com.wyq.mcowu.junlintianxia.junlintianxia.Bean.SYBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.interface_.Zhujie;
 import com.wyq.mcowu.junlintianxia.junlintianxia.net.retrofit.RetrofitService;
 

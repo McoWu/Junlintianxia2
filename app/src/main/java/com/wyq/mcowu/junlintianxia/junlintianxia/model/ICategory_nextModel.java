@@ -1,6 +1,5 @@
 package com.wyq.mcowu.junlintianxia.junlintianxia.model;
 
-
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.Category_next;
 
 /**
