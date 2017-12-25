@@ -26,6 +26,11 @@ public class CateNextAdapter extends RecyclerView.Adapter<CateNextAdapter.MyView
         this.context = context;
         this.list = list;
     }
+    onItemClickListener listener;
+    public void setOnItemClickListener(onItemClickListener listener){
+        this.listener = listener;
+
+    }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -35,12 +40,17 @@ public class CateNextAdapter extends RecyclerView.Adapter<CateNextAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
         holder.price.setText("￥ "+list.get(position).getPrice()+"");
         holder.title.setText(list.get(position).getName());
         Uri parse = Uri.parse(list.get(position).getImgUrl());
         holder.img.setImageURI(parse);
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.ItemClick(holder.itemView,position);
+            }
+        });
 
     }
 
@@ -61,5 +71,9 @@ public class CateNextAdapter extends RecyclerView.Adapter<CateNextAdapter.MyView
             title=itemView.findViewById(R.id.title);
             price=itemView.findViewById(R.id.price);
         }
+    }
+
+    public interface onItemClickListener{
+        void ItemClick(View view,int position);
     }
 }
