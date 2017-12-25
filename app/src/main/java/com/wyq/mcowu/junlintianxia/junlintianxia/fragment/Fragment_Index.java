@@ -10,9 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wyq.mcowu.junlintianxia.R;
-import com.wyq.mcowu.junlintianxia.junlintianxia.Adapter.SYAdapter1;
-import com.wyq.mcowu.junlintianxia.junlintianxia.Bean.SYBean;
-import com.wyq.mcowu.junlintianxia.junlintianxia.Presenter.SYPresentr;
+import com.wyq.mcowu.junlintianxia.junlintianxia.adapter.SYAdapter1;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.presenter.SYPresentr;
 import com.wyq.mcowu.junlintianxia.junlintianxia.myapp.Imgloder;
 import com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.MyView;
 import com.youth.banner.Banner;

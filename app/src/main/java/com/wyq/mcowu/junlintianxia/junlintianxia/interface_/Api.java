@@ -21,13 +21,10 @@ public interface Api {
      */
     @GET("course_api/category/list")
     Observable<List<Category>> Category();
+
     /**
-    * 分类二级
-    */
+     * 分类二级
+     */
     @GET("course_api/wares/list")
-    Observable<Category_next> Category_next(@Query("categoryId") int categoryId,@Query("curPage") int curPage,@Query("pageSize") int pageSize);
-public class Api {
-    public static final String BASE_URL="http://112.124.22.238:8081/course_api/"
-
-
+    Observable<Category_next> Category_next(@Query("categoryId") int categoryId, @Query("curPage") int curPage, @Query("pageSize") int pageSize);
 }

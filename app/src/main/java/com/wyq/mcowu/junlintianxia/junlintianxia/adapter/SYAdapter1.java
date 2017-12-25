@@ -1,4 +1,4 @@
-package com.wyq.mcowu.junlintianxia.junlintianxia.Adapter;
+package com.wyq.mcowu.junlintianxia.junlintianxia.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wyq.mcowu.junlintianxia.R;
-import com.wyq.mcowu.junlintianxia.junlintianxia.Bean.SYBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
 
 import java.util.List;
 

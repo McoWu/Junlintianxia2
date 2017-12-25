@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers;
  * Created by dell on 2017/12/25.
  */
 
-public class Category_nextModel implements ICategory_nextModel{
+public class Category_nextModel implements ICategory_nextModel {
 
     @Override
     public void category_next(int categoryId, int curPage, int pageSize, final CallBack callBack) {

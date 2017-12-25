@@ -1,4 +1,4 @@
-package com.wyq.mcowu.junlintianxia.junlintianxia.Bean;
+package com.wyq.mcowu.junlintianxia.junlintianxia.bean;
 
 /**
  * Created by tangxiaoying on 2017/12/21.
