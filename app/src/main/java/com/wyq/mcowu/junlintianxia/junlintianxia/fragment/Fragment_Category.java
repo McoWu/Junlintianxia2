@@ -1,5 +1,6 @@
 package com.wyq.mcowu.junlintianxia.junlintianxia.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wyq.mcowu.junlintianxia.R;
+import com.wyq.mcowu.junlintianxia.junlintianxia.activity.DetailsActivity;
 import com.wyq.mcowu.junlintianxia.junlintianxia.adapter.CateNextAdapter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.adapter.CategoryAdapter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.base.BaseFragment;
@@ -46,7 +48,6 @@ public class Fragment_Category extends BaseFragment<CategoryPresenter> implement
         prsenter.show(1);
         initBanner();
         return view;
-
     }
 
     private void initView(@NonNull final View itemView) {
@@ -92,7 +93,7 @@ public class Fragment_Category extends BaseFragment<CategoryPresenter> implement
     }
     @Override
     public void showNext(Category_next category_next) {
-        List<Category_next.ListBean> list = category_next.getList();
+        final List<Category_next.ListBean> list = category_next.getList();
         Log.i("======category_next====", "showNext: "+category_next.getList().size());
         GridLayoutManager manager = new GridLayoutManager(getContext(),2);
         mRightRv.setLayoutManager(manager);
@@ -101,7 +102,10 @@ public class Fragment_Category extends BaseFragment<CategoryPresenter> implement
         adapter.setOnItemClickListener(new CateNextAdapter.onItemClickListener() {
             @Override
             public void ItemClick(View view, int position) {
-
+                int id = list.get(position).getId();
+                Intent intent=new Intent(getContext(), DetailsActivity.class);
+                intent.putExtra("id",id);
+                startActivity(intent);
             }
         });
     }
