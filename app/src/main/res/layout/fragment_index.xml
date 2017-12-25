@@ -28,8 +28,6 @@
             <LinearLayout
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_width="@dimen/x300"
-                android:layout_height="@dimen/y13"
                 android:layout_width="@dimen/x310"
                 android:layout_height="@dimen/y15"
                 android:layout_marginLeft="10dp"
@@ -47,10 +45,8 @@
                     >
                     <ImageView
                         android:id="@+id/sousuo_iv"
-                        android:layout_width="@dimen/x20"
-                        android:layout_height="@dimen/y30"
                         android:layout_width="@dimen/x30"
-                        android:layout_height="@dimen/y15"
+                        android:layout_height="@dimen/y30"
                         android:src="@mipmap/sou"
                          android:layout_marginLeft="5dp"
                         />
@@ -60,10 +56,8 @@
                         android:background="@null"
                         android:id="@+id/ed_sousuo"
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/y30"
                         android:textSize="15sp"
-                        android:layout_height="@dimen/y15"
-                        android:textSize="12sp"
+                        android:layout_height="@dimen/y30"
                         android:layout_weight="1"
                         android:hint="请输入内容"
                         android:gravity="center"
