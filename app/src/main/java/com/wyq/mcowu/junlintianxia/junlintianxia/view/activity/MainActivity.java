@@ -3,11 +3,12 @@ package com.wyq.mcowu.junlintianxia.junlintianxia.view.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
 import com.wyq.mcowu.junlintianxia.R;
+import com.wyq.mcowu.junlintianxia.junlintianxia.Immersive.Immersives;
 import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Cart;
 import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Category;
 import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Find;
@@ -15,9 +16,6 @@ import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Index;
 import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Mine;
 
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //沉浸式
+        Immersives.getInstance().Immersive(getWindow(),getActionBar());
+        //隐藏标题栏
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.hide();
+
         initView();
         initFrag();
         showFrag(R.id.fl, fragment_index, "fragment_index");
