@@ -55,7 +55,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     //17.RollViewPager（轮播图）
     compile 'com.jude:rollviewpager:1.4.6'
-   // 20.fresco
+    // 20.fresco
     compile 'com.facebook.fresco:fresco:0.11.0'
     //xbanner
     compile 'com.xhb:xbanner:1.2.2'
