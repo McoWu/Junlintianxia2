@@ -20,9 +20,39 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //3.banner滑动的依赖。
+    compile 'com.youth.banner:banner:1.4.9'
+    //6.Glide显示图片的依赖。
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //10.butterKnife 的依赖
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //12，Okhttp请求依赖
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    //13， XRecyclerView 依赖：
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
+    //14，RxJava依赖
+    compile 'io.reactivex.rxjava2:rxjava:2.1.1'
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+//retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+//Gson converter
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+//RxJava2 Adapter
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+//okhttp
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    // 16.retrofit依赖
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    //17.RollViewPager（轮播图）
+    compile 'com.jude:rollviewpager:1.4.6'
+   // 20.fresco
+    compile 'com.facebook.fresco:fresco:0.11.0'
+
 }
