@@ -19,7 +19,7 @@
             <LinearLayout
                 android:id="@+id/ll"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/x30"
+                android:layout_height="@dimen/y30"
                 android:orientation="horizontal"
                 android:background="@android:color/holo_red_light"
                 >
@@ -28,10 +28,10 @@
             <LinearLayout
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_width="@dimen/x310"
-                android:layout_height="@dimen/y12"
+                android:layout_width="@dimen/x300"
+                android:layout_height="@dimen/y13"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="20dp"
                 android:background="@android:color/holo_red_dark"
 
                 >
@@ -40,15 +40,15 @@
                     android:layout_weight="1"
                     android:background="@drawable/btn2"
                     android:layout_width="match_parent"
-                    android:layout_height="15dp"
+                    android:layout_height="@dimen/y30"
 
                     >
                     <ImageView
                         android:id="@+id/sousuo_iv"
-                        android:layout_width="@dimen/x30"
-                        android:layout_height="@dimen/y7"
+                        android:layout_width="@dimen/x20"
+                        android:layout_height="@dimen/y30"
                         android:src="@mipmap/sou"
-
+                         android:layout_marginLeft="5dp"
                         />
 
 
@@ -56,8 +56,8 @@
                         android:background="@null"
                         android:id="@+id/ed_sousuo"
                         android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:textSize="12sp"
+                        android:layout_height="@dimen/y30"
+                        android:textSize="15sp"
                         android:layout_weight="1"
                         android:hint="请输入内容"
                         android:gravity="center"
@@ -69,7 +69,7 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <com.youth.banner.Banner
+        <com.stx.xhb.xbanner.XBanner
             android:id="@+id/ban"
             android:layout_width="match_parent"
             android:layout_height="@dimen/y130"
