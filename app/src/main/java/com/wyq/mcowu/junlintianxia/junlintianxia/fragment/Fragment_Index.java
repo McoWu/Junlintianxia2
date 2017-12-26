@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,12 +67,13 @@ public class Fragment_Index extends Fragment implements MyView,XBanner.XBannerAd
         wenzi.add("国庆大礼包");
         wenzi.add("手机大放假");
 
-        imgesUrl.add("http://7mno4h.com2.z0.glb.qiniucdn.com/5608f3b5Nc8d90151.jpg");
+       imgesUrl.add("http://7mno4h.com2.z0.glb.qiniucdn.com/5608f3b5Nc8d90151.jpg");
         imgesUrl.add("http://7mno4h.com2.z0.glb.qiniucdn.com/5608eb8cN9b9a0a39.jpg");
         imgesUrl.add("http://7mno4h.com2.z0.glb.qiniucdn.com/5608cae6Nbb1a39f9.jpg");
         imgesUrl.add("http://7mno4h.com2.z0.glb.qiniucdn.com/5608b7cdN218fb48f.jpg");
         imgesUrl.add("http://7mno4h.com2.z0.glb.qiniucdn.com/560b5a7eN214306c8.jpg");
         imgesUrl.add("http://7mno4h.com2.z0.glb.qiniucdn.com/560a409eN35e252de.jpg");
+
         xBanner.setData(imgesUrl, wenzi);
         xBanner.setmAutoPalyTime(2000);
         xBanner.setPageTransformer(Transformer.Rotate);    //立体旋转
@@ -80,7 +82,6 @@ public class Fragment_Index extends Fragment implements MyView,XBanner.XBannerAd
     //首页热门活动数据
     @Override
     public void SYData(List<SYBean> bean) {
-
         //  Log.i(TAG, "SYData: " + bean.size());
         //创建适配器1
         SYAdapter1 showAdapter = new SYAdapter1(getActivity(),bean);
