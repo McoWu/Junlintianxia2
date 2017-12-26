@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.wyq.mcowu.junlintianxia.junlintianxia.activity.DetailsActivity">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y150"
+        />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img"
+        android:textSize="18sp"
+        android:padding="@dimen/y10"
 
-</android.support.constraint.ConstraintLayout>
+        />
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="15sp"
+        android:padding="@dimen/y10"
+        />
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y35"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <RadioButton
+            android:id="@+id/rb_share"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="分享"
+            android:textSize="@dimen/y10"
+
+            android:gravity="center"
+            />
+        <RadioButton
+            android:id="@+id/rb_add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="加入购物车"
+            android:textSize="@dimen/y10"
+            android:gravity="center"
+            />
+        <RadioButton
+            android:id="@+id/rb_buy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:button="@null"
+            android:text="立即购买"
+            android:background="@android:color/holo_red_dark"
+            android:textSize="@dimen/y10"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            />
+    </RadioGroup>
+
+</RelativeLayout>
