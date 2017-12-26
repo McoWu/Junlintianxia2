@@ -56,11 +56,6 @@ public class Fragment_Index extends Fragment implements MyView,XBanner.XBannerAd
         return view;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
     //首页banner轮播图
     private void  initBanner() {
         //直接加图片的xbanner
