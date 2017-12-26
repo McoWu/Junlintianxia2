@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <TextView
+            android:onClick="qq"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="QQ"
+            android:drawableTop="@drawable/umeng_socialize_qq"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:onClick="weiXin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="微信"
+            android:drawableTop="@drawable/umeng_socialize_wechat"
+            android:gravity="center"
+            />
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="weixinCircle"
+            android:drawableTop="@drawable/umeng_socialize_wxcircle"
+            android:text="朋友圈"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:onClick="sina"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/umeng_socialize_sina"
+            android:text="微博"
+            android:gravity="center"
+            />
+                <TextView
+                    android:onClick="Qzone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/umeng_socialize_qzone"
+                    android:text="QQ空间"
+                    android:gravity="center"
+                    />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
