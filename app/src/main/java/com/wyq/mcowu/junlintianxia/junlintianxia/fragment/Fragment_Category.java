@@ -103,8 +103,14 @@ public class Fragment_Category extends BaseFragment<CategoryPresenter> implement
             @Override
             public void ItemClick(View view, int position) {
                 int id = list.get(position).getId();
+                String imgUrl = list.get(position).getImgUrl();
+                String name = list.get(position).getName();
+                double price = list.get(position).getPrice();
                 Intent intent=new Intent(getContext(), DetailsActivity.class);
                 intent.putExtra("id",id);
+                intent.putExtra("img",imgUrl);
+                intent.putExtra("name",name);
+                intent.putExtra("price",price);
                 startActivity(intent);
             }
         });
