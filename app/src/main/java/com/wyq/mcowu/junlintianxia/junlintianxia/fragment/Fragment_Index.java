@@ -31,7 +31,6 @@ import butterknife.Unbinder;
 public class Fragment_Index extends Fragment implements MyView,XBanner.XBannerAdapter{
 
    XBanner  xBanner;
-    Unbinder unbinder;
     RecyclerView recy1;
     private List<String> imgesUrl;
     private List<String> wenzi;
@@ -55,7 +54,6 @@ public class Fragment_Index extends Fragment implements MyView,XBanner.XBannerAd
 
         return view;
     }
-
     //首页banner轮播图
     private void  initBanner() {
         //直接加图片的xbanner
