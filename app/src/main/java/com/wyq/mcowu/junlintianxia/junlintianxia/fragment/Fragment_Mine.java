@@ -1,5 +1,6 @@
 package com.wyq.mcowu.junlintianxia.junlintianxia.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.wyq.mcowu.junlintianxia.R;
+import com.wyq.mcowu.junlintianxia.junlintianxia.activity.RegisterActivity;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.LoginBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.RegisterBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.presenter.LoginPresent;
@@ -44,7 +46,7 @@ public class Fragment_Mine extends Fragment implements MindView{
         view = View.inflate(getContext(), R.layout.fragment_mine, null);
 
         initView();
-        registerPresent = new RegisterPresent(this);
+//        registerPresent = new RegisterPresent(this);
         loginPresent = new LoginPresent(this);
 
 
@@ -68,14 +70,18 @@ public class Fragment_Mine extends Fragment implements MindView{
             @Override
             public void onClick(View view) {
 
-                String key = "Cniao5_123456";
-                String text = etPwd.getText().toString();
-                encodePhone = DESUtils.encode(key,text);
-                Log.i("DES encode text is ", encodePhone);
-                Log.i("wangjinlei", "onClick: phone" + etPhone.getText().toString());
-                Log.i("wangjinlei", "onClick: pwd" + text);
+//                String key = "Cniao5_123456";
+//                String text = etPwd.getText().toString();
+//                encodePhone = DESUtils.encode(key,text);
+//                Log.i("DES encode text is ", encodePhone);
+//                Log.i("wangjinlei", "onClick: phone" + etPhone.getText().toString());
+//                Log.i("wangjinlei", "onClick: pwd" + text);
                 //注册
-                Register(etPhone.getText().toString(),encodePhone);
+//                Register(etPhone.getText().toString(),encodePhone);
+
+                Intent in = new Intent(getActivity(),RegisterActivity.class);
+                startActivity(in);
+
             }
         });
 

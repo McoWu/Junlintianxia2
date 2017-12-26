@@ -47,9 +47,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".junlintianxia.activity.DetailsActivity"
 
-            >
+        <activity android:name=".junlintianxia.activity.RegisterActivity"></activity>
+
+        <activity android:name=".junlintianxia.activity.DetailsActivity"  >
 
         </activity>
         <!--微信-->
