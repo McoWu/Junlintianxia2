@@ -53,6 +53,7 @@
         <activity android:name=".junlintianxia.activity.DetailsActivity"  >
 
         </activity>
+        <activity android:name=".junlintianxia.view.activity.Product_Activity"></activity>
         <!--微信-->
         <activity
             android:name=".junlintianxia.wxapi.WXEntryActivity"
