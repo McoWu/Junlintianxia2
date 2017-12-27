@@ -1,12 +1,14 @@
 package com.wyq.mcowu.junlintianxia.junlintianxia.interface_;
 
 
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBanner;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
 
 import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 
 /**
@@ -20,5 +22,6 @@ public interface Zhujie {
     @GET("course_api/campaign/recommend")
     Observable<List<SYBean>> getSY();
 
-
+    @GET("course_api/banner/query")
+    Observable<List<SYBanner>> getSYBanner(@Query("type")String type);
 }

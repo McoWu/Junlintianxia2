@@ -1,6 +1,7 @@
 package com.wyq.mcowu.junlintianxia.junlintianxia.model;
 
 
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBanner;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.interface_.Zhujie;
 import com.wyq.mcowu.junlintianxia.junlintianxia.net.retrofit.RetrofitService;
@@ -28,6 +29,7 @@ public class MyModel {
     public interface IModel {
         //首页
          void SYCallBack(List<SYBean> bean);
+         void SYBannerCallBack(List<SYBanner> bean);
 
     }
       //首页数据
@@ -61,6 +63,37 @@ public class MyModel {
                      }
                  });
 }
+
+    public void getSYBanner(String type){
+        //  OkHttpClient okHttpClient1=new OkHttpClient();
+        RetrofitService.createService(Zhujie.class)
+                .getSYBanner(type)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<List<SYBanner>>() {
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(List<SYBanner> syBeans) {
+                        model.SYBannerCallBack(syBeans);
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
 
 }
 

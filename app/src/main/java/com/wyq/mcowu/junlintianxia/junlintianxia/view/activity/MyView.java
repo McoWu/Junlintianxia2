@@ -1,6 +1,7 @@
 package com.wyq.mcowu.junlintianxia.junlintianxia.view.activity;
 
 
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBanner;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 public interface MyView {
     //首页view
     void  SYData(List<SYBean> bean);
+    void  ShowSYBannerData(List<SYBanner> bean);
 
 
 }

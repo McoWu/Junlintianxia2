@@ -19,9 +19,13 @@ import com.wyq.mcowu.junlintianxia.junlintianxia.adapter.CategoryAdapter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.base.BaseFragment;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.Category;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.Category_next;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBanner;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.myapp.Imgloder;
 import com.wyq.mcowu.junlintianxia.junlintianxia.presenter.CategoryPresenter;
+import com.wyq.mcowu.junlintianxia.junlintianxia.presenter.SYBannerPresent;
 import com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.ICategory_View;
+import com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.MyView;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -31,13 +35,15 @@ import java.util.List;
  * Created by dell on 2017/12/25.
  */
 
-public class Fragment_Category extends BaseFragment<CategoryPresenter> implements ICategory_View {
+public class Fragment_Category extends BaseFragment<CategoryPresenter> implements ICategory_View,MyView{
 
 
     private RecyclerView mLeftRv;
     private Banner mBannerCate;
     private RecyclerView mRightRv;
     private List<String> list;
+    SYBannerPresent syBannerPresent;
+    List<String> images;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,7 +52,6 @@ public class Fragment_Category extends BaseFragment<CategoryPresenter> implement
         initView(view);
         prsenter.show();
         prsenter.show(1);
-        initBanner();
         return view;
     }
 
@@ -59,21 +64,9 @@ public class Fragment_Category extends BaseFragment<CategoryPresenter> implement
     @Override
     public void createPresenter() {
         prsenter = new CategoryPresenter(getContext(), this);
+        syBannerPresent = new SYBannerPresent(this);
+        syBannerPresent.add("1");
 
-    }
-    public void initBanner(){
-        list=new ArrayList<>();
-        list.add("http://7mno4h.com2.z0.glb.qiniucdn.com/5608f3b5Nc8d90151.jpg");
-        list.add("http://7mno4h.com2.z0.glb.qiniucdn.com/5608eb8cN9b9a0a39.jpg");
-        list.add("http://7mno4h.com2.z0.glb.qiniucdn.com/5608cae6Nbb1a39f9.jpg");
-        list.add("http://7mno4h.com2.z0.glb.qiniucdn.com/5608b7cdN218fb48f.jpg");
-        list.add("http://7mno4h.com2.z0.glb.qiniucdn.com/560b5a7eN214306c8.jpg");
-        list.add("http://7mno4h.com2.z0.glb.qiniucdn.com/560a409eN35e252de.jpg");
-
-        mBannerCate.isAutoPlay(true);
-        mBannerCate.setImageLoader(new Imgloder());
-        mBannerCate.setImages(list);
-        mBannerCate.start();
     }
 
     @Override
@@ -116,4 +109,22 @@ public class Fragment_Category extends BaseFragment<CategoryPresenter> implement
         });
     }
 
+    @Override
+    public void SYData(List<SYBean> bean) {
+
+    }
+
+    @Override
+    public void ShowSYBannerData(List<SYBanner> bean) {
+
+        images = new ArrayList<>();
+        for(int i = 0;i<bean.size();i++){
+            images.add(bean.get(i).getImgUrl());
+        }
+
+        mBannerCate.isAutoPlay(true);
+        mBannerCate.setImageLoader(new Imgloder());
+        mBannerCate.setImages(images);
+        mBannerCate.start();
+    }
 }
