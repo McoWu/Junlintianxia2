@@ -16,8 +16,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    signingConfigs{
-        debug{
+    signingConfigs {
+        debug {
             storeFile file('debug.keystore')
             storePassword "android"
             keyAlias "androiddebugkey"
@@ -65,4 +65,5 @@ dependencies {
     //xbanner
     compile 'com.xhb:xbanner:1.2.2'
     implementation files('libs/SocialSDK_QQ_Simplify.jar')
+    implementation 'com.android.support:design:26.1.0'
 }
