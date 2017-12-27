@@ -6,11 +6,6 @@ package com.wyq.mcowu.junlintianxia.junlintianxia.bean;
 
 public class Category {
 
-    /**
-     * id : 1
-     * name : 热门推荐
-     * sort : 1
-     */
 
     private int id;
     private String name;
