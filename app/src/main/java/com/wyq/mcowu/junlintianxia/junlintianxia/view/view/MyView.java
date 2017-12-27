@@ -1,7 +1,7 @@
 package com.wyq.mcowu.junlintianxia.junlintianxia.view.view;
 
 
-import com.wyq.mcowu.junlintianxia.junlintianxia.bean.SYBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.IndexBean;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface MyView {
     //首页view
-    void  SYData(List<SYBean> bean);
+    void  SYData(List<IndexBean> bean);
 
 
 }
