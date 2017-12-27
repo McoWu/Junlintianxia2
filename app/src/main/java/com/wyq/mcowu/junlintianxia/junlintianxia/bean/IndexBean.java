@@ -6,7 +6,7 @@ package com.wyq.mcowu.junlintianxia.junlintianxia.bean;
  * http://112.124.22.238:8081/course_api/campaign/recommend
  */
 
-public class SYBean {
+public class IndexBean {
 
 
     /**

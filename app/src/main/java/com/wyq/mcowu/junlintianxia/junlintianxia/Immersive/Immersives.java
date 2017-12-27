@@ -8,6 +8,7 @@ import android.view.Window;
 
 /**
  * Created by tangxiaoying on 2017/12/25.
+ * 沉浸式
  */
 
 public class Immersives {
