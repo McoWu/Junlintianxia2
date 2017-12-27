@@ -9,9 +9,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.wyq.mcowu.junlintianxia.R;
-import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Default;
-import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Price;
-import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Sales;
+import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_default;
+import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_price;
+import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_sales;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +51,9 @@ public class Product_Activity extends FragmentActivity {
     //添加Fragment
     private void addFragments() {
         lists = new ArrayList<>();
-        lists.add(new Fragment_Default());
-        lists.add(new Fragment_Price());
-        lists.add(new Fragment_Sales());
+        lists.add(new Fragment_default());
+        lists.add(new Fragment_price());
+        lists.add(new Fragment_sales());
     }
 
     // ViewPager适配器
