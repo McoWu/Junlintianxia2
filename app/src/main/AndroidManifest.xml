@@ -47,11 +47,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".junlintianxia.activity.DetailsActivity"
 
-            >
+        <activity android:name=".junlintianxia.activity.RegisterActivity"></activity>
+
+        <activity android:name=".junlintianxia.activity.DetailsActivity"  >
 
         </activity>
+        <activity android:name=".junlintianxia.view.activity.Product_Activity"></activity>
         <!--微信-->
         <activity
             android:name=".junlintianxia.wxapi.WXEntryActivity"

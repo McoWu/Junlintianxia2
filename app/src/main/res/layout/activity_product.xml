@@ -1,21 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
 
-    >
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.Product_Activity">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y20"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_red_light"
+        >
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="@dimen/x20"
+        android:layout_height="@dimen/y10"
+        android:src="@drawable/back"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        />
+      <TextView
+          android:id="@+id/tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="商品列表"
+          android:textColor="@android:color/white"
+          android:textSize="18sp"
+          android:layout_marginHorizontal="100dp"
+          android:layout_marginTop="20dp"
+          android:layout_marginLeft="100dp"
+          />
+        <ImageView
+            android:id="@+id/backs"
+            android:layout_width="@dimen/x20"
+            android:layout_height="@dimen/y10"
+            android:src="@drawable/collection"
+             android:layout_marginLeft="100dp"
+             android:layout_marginTop="20dp"
+            />
+
+    </LinearLayout>
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/y12"
+        app:tabTextAppearance="@android:style/TextAppearance.Holo.Large"
+        app:tabTextColor="@android:color/darker_gray"
+        app:tabSelectedTextColor="@android:color/holo_red_light"
+        app:tabIndicatorColor="@android:color/holo_red_light"
+        app:tabMode="scrollable"
+        app:tabGravity="center"
+        android:layout_below="@+id/ll"
         >
-
     </android.support.design.widget.TabLayout>
+    <TextView
+        android:id="@+id/ttv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y12"
+        android:layout_below="@+id/tab"
+        android:background="@android:color/holo_orange_light"
+        android:text="共计23件商品"
+
+        />
     <android.support.v4.view.ViewPager
         android:id="@+id/vp2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/y300"
+        android:layout_below="@+id/ttv"
         >
-
     </android.support.v4.view.ViewPager>
-</LinearLayout>
+
+</RelativeLayout>

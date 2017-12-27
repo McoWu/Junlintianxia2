@@ -18,6 +18,7 @@ public class Fragment_Cart extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getContext(), R.layout.fragment_cart,null);
+        //这个是一个购物车的页面
         return view;
     }
 }
