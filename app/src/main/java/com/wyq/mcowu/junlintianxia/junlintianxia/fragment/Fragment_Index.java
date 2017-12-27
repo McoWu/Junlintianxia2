@@ -17,7 +17,7 @@ import com.wyq.mcowu.junlintianxia.junlintianxia.adapter.IndexAdapter1;
 import com.wyq.mcowu.junlintianxia.junlintianxia.base.BaseFragment;
 import com.wyq.mcowu.junlintianxia.junlintianxia.base.BasePresenter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.IndexBean;
-import com.wyq.mcowu.junlintianxia.junlintianxia.bean.ReMaiBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.FindBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.presenter.IndexPresentr;
 import com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.IndexView;
 
@@ -94,9 +94,9 @@ public class Fragment_Index extends BaseFragment<BasePresenter> implements Index
         IndexAdapter1 showAdapter = new IndexAdapter1(getActivity(),bean);
         recy1.setAdapter(showAdapter);
     }
-     //发现
+    //发现
     @Override
-    public void RMData(ReMaiBean reMaiBeen) {
+    public void FindData(FindBean reMaiBeen) {
 
     }
 

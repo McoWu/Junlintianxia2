@@ -1,6 +1,6 @@
 package com.wyq.mcowu.junlintianxia.junlintianxia.model;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.IndexBean;
-import com.wyq.mcowu.junlintianxia.junlintianxia.bean.ReMaiBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.FindBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.interface_.Zhujie;
 import com.wyq.mcowu.junlintianxia.junlintianxia.net.retrofit.RetrofitService;
 import java.util.List;
@@ -25,7 +25,7 @@ public class IndexModel {
         //首页
          void SYCallBack(List<IndexBean> bean);
         //发现
-        void RMCallBack(ReMaiBean reMaiBeen);
+        void FindCallBack(FindBean reMaiBeen);
     }
       //首页数据
    public void SYShuju(){
@@ -60,21 +60,21 @@ public class IndexModel {
 }
 
     //发现数据
-    public void RMShuju(int page,int size){
+    public void FindShuju(int page,int size){
       //  OkHttpClient okHttpClient2=new OkHttpClient();
         RetrofitService.createService(Zhujie.class)
                 .getRM(page,size)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<ReMaiBean>() {
+                .subscribe(new Observer<FindBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(ReMaiBean reMaiBean) {
-                        model.RMCallBack(reMaiBean);
+                    public void onNext(FindBean reMaiBean) {
+                        model.FindCallBack(reMaiBean);
                     }
 
                     @Override

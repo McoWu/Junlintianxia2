@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wyq.mcowu.junlintianxia.R;
-import com.wyq.mcowu.junlintianxia.junlintianxia.adapter.ReMaiAdapter;
+import com.wyq.mcowu.junlintianxia.junlintianxia.adapter.FindAdapter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.base.BaseFragment;
 import com.wyq.mcowu.junlintianxia.junlintianxia.base.BasePresenter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.IndexBean;
-import com.wyq.mcowu.junlintianxia.junlintianxia.bean.ReMaiBean;
-import com.wyq.mcowu.junlintianxia.junlintianxia.presenter.RMPresentr;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.FindBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.presenter.FindPresentr;
 import com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.IndexView;
 
 import java.util.List;
@@ -27,7 +27,7 @@ public class Fragment_Find extends BaseFragment<BasePresenter> implements IndexV
 
 
     private RecyclerView mRemaiRecy;
-    private RMPresentr fxpresenter;
+    private FindPresentr fxpresenter;
 
     @Nullable
     @Override
@@ -42,7 +42,7 @@ public class Fragment_Find extends BaseFragment<BasePresenter> implements IndexV
 
     @Override
     public void createPresenter() {
-        fxpresenter = new RMPresentr(this);
+        fxpresenter = new FindPresentr(this);
     }
 
     //首页
@@ -50,15 +50,15 @@ public class Fragment_Find extends BaseFragment<BasePresenter> implements IndexV
     public void SYData(List<IndexBean> bean) {
 
     }
-
     //发现
     @Override
-    public void RMData(ReMaiBean reMaiBeen) {
+    public void FindData(FindBean reMaiBeen) {
         LinearLayoutManager remaill=new LinearLayoutManager(getActivity());
         mRemaiRecy.setLayoutManager(remaill);
 
-        ReMaiAdapter reMaiAdapter=new ReMaiAdapter(getActivity(),reMaiBeen);
+        FindAdapter reMaiAdapter=new FindAdapter(getActivity(),reMaiBeen);
         mRemaiRecy.setAdapter(reMaiAdapter);
-
     }
+
+
 }

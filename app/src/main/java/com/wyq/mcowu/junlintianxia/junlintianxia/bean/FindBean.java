@@ -8,7 +8,7 @@ import java.util.List;
  * http://112.124.22.238:8081/course_api/wares/hot?curPage=1&pageSize=20
  */
 
-public class ReMaiBean {
+public class FindBean {
 
 
     /**

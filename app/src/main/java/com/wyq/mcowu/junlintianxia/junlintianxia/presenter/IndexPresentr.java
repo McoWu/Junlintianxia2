@@ -2,7 +2,7 @@ package com.wyq.mcowu.junlintianxia.junlintianxia.presenter;
 
 
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.IndexBean;
-import com.wyq.mcowu.junlintianxia.junlintianxia.bean.ReMaiBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.FindBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.model.IndexModel;
 import com.wyq.mcowu.junlintianxia.junlintianxia.base.BasePresenter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.IndexView;
@@ -39,9 +39,10 @@ public class IndexPresentr implements IndexModel.IModel,BasePresenter<IndexView>
     }
 
     @Override
-    public void RMCallBack(ReMaiBean reMaiBeen) {
+    public void FindCallBack(FindBean reMaiBeen) {
 
     }
+
 
 
     @Override

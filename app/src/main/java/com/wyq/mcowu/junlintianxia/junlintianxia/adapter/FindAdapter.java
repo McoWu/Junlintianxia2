@@ -10,7 +10,7 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wyq.mcowu.junlintianxia.R;
-import com.wyq.mcowu.junlintianxia.junlintianxia.bean.ReMaiBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.FindBean;
 
 
 /**
@@ -18,10 +18,10 @@ import com.wyq.mcowu.junlintianxia.junlintianxia.bean.ReMaiBean;
  * 热卖
  */
 
-public class ReMaiAdapter extends RecyclerView.Adapter<ReMaiAdapter.MyViewHolder> implements View.OnClickListener{
+public class FindAdapter extends RecyclerView.Adapter<FindAdapter.MyViewHolder> implements View.OnClickListener{
 
      Context context;
-     ReMaiBean list;
+     FindBean list;
     //利用接口回调实现点击事件
        //再实例，然后创建方法
     private OnItemClickListener mOnItemClickListener = null;
@@ -30,7 +30,7 @@ public class ReMaiAdapter extends RecyclerView.Adapter<ReMaiAdapter.MyViewHolder
         void onItemClick(View view, int position);
     }
 
-    public ReMaiAdapter(Context context, ReMaiBean  list) {
+    public FindAdapter(Context context, FindBean list) {
         this.context = context;
         this.list = list;
     }

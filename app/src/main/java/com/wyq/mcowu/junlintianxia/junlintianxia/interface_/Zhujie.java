@@ -2,7 +2,7 @@ package com.wyq.mcowu.junlintianxia.junlintianxia.interface_;
 
 
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.IndexBean;
-import com.wyq.mcowu.junlintianxia.junlintianxia.bean.ReMaiBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.FindBean;
 import java.util.List;
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -20,7 +20,7 @@ public interface Zhujie {
     Observable<List<IndexBean>> getSY();
   //发现   http://112.124.22.238:8081/course_api/wares/hot?curPage=1&pageSize=20
     @GET("course_api/wares/hot")
-  Observable<ReMaiBean> getRM(@Query("curPage") int page, @Query("pageSize") int size);
+  Observable<FindBean> getRM(@Query("curPage") int page, @Query("pageSize") int size);
 
 
 }
