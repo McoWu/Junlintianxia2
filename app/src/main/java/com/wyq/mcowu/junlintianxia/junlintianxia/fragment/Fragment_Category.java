@@ -21,7 +21,7 @@ import com.wyq.mcowu.junlintianxia.junlintianxia.bean.Category;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.Category_next;
 import com.wyq.mcowu.junlintianxia.junlintianxia.myapp.Imgloder;
 import com.wyq.mcowu.junlintianxia.junlintianxia.presenter.CategoryPresenter;
-import com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.ICategory_View;
+import com.wyq.mcowu.junlintianxia.junlintianxia.view.view.ICategory_View;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;

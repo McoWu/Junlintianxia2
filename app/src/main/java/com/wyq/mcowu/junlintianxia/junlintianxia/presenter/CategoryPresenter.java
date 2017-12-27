@@ -9,7 +9,7 @@ import com.wyq.mcowu.junlintianxia.junlintianxia.model.Category_Model;
 import com.wyq.mcowu.junlintianxia.junlintianxia.model.Category_nextModel;
 import com.wyq.mcowu.junlintianxia.junlintianxia.model.ICategory_Model;
 import com.wyq.mcowu.junlintianxia.junlintianxia.model.ICategory_nextModel;
-import com.wyq.mcowu.junlintianxia.junlintianxia.view.activity.ICategory_View;
+import com.wyq.mcowu.junlintianxia.junlintianxia.view.view.ICategory_View;
 
 import java.lang.ref.WeakReference;
 import java.util.List;

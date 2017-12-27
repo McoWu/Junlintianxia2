@@ -1,4 +1,4 @@
-package com.wyq.mcowu.junlintianxia.junlintianxia.view.activity;
+package com.wyq.mcowu.junlintianxia.junlintianxia.view.view;
 
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.Category;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.Category_next;
