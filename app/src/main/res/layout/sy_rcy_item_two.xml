@@ -34,7 +34,6 @@
         android:layout_height="@dimen/y46"
         android:src="@mipmap/ic_launcher"
         android:layout_toRightOf="@+id/img"
-        android:background="@color/colorAccent"
 
         />
     <com.facebook.drawee.view.SimpleDraweeView
@@ -44,7 +43,6 @@
         android:src="@mipmap/ic_launcher"
         android:layout_below="@+id/img1"
         android:layout_toRightOf="@+id/img"
-        android:background="@color/colorAccent"
         android:layout_marginTop="15dp"
         />
 </RelativeLayout>
