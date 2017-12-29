@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -63,28 +64,33 @@ public class IndexAdapter1 extends RecyclerView.Adapter< IndexAdapter1.MyViewHol
         IndexAdapter2 adapter2=new IndexAdapter2(context,list);
         holder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
         holder.recyclerView.setAdapter(adapter2);
-        //条目点击事件
-        adapter2.setmOnItemClickListener(new IndexAdapter2.OnItemClickListener() {
+        adapter2.setOnItemClickListener(new IndexAdapter2.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
+            public void OnItemClick(View view, final int position) {
+                Log.i("============idddd", "onClick: "+position);
+
                 //旋转动画
                 ObjectAnimator animator =  ObjectAnimator.ofFloat(view, "rotationX", 0.0F, 360.0F)
                         .setDuration(1000);
-                        animator.addListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
-                               //跳转
-                                Intent intent=new Intent(context, Product_Activity.class);
-
-                                context.startActivity(intent);
-                            }
-                        });
-                 animator.start();
-
+                animator.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        //跳转
+                        Intent intent=new Intent(context, Product_Activity.class);
+                        intent.putExtra("id",position);
+                        context.startActivity(intent);
+                    }
+                });
+                animator.start();
             }
-
         });
+
+
+
+
+        //条目点击事件
+
 
 
 
@@ -96,7 +102,10 @@ public class IndexAdapter1 extends RecyclerView.Adapter< IndexAdapter1.MyViewHol
 
     @Override
     public int getItemCount() {
-        return list.size();
+        if(list!=null){
+            return 1;
+        }
+        return 0;
     }
     public class MyViewHolder extends RecyclerView.ViewHolder{
 

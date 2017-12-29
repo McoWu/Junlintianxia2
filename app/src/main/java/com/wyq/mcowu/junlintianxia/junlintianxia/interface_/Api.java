@@ -3,6 +3,7 @@ package com.wyq.mcowu.junlintianxia.junlintianxia.interface_;
 
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.Category;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.Category_next;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.HotBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.LoginBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.RegisterBean;
 
@@ -44,4 +45,15 @@ public interface Api {
      */
     @POST("course_api/auth/login")
     Observable<LoginBean> getLoginData(@Query("phone") String phone, @Query("password") String pwd);
+
+    /**
+     * 热门下的商品
+     */
+    //campaignId=10&orderBy=1&curPage=1&pageSize=20
+    //112.124.22.238:8081/course_api/wares/campaign/list
+    @GET("course_api/wares/campaign/list")
+    Observable<HotBean> getData(@Query("campaignId") int campaignId,@Query("orderBy") int orderBy,@Query("curPage") int curPage,@Query("pageSize") int pageSize);
+
+
+
 }
