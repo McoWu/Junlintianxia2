@@ -14,9 +14,12 @@ import android.widget.ImageView;
 
 import com.wyq.mcowu.junlintianxia.R;
 import com.wyq.mcowu.junlintianxia.junlintianxia.Immersive.Immersives;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.EventBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Default;
 import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Price;
 import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Sales;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +34,7 @@ public class Product_Activity extends AppCompatActivity implements View.OnClickL
     //设置自定义标题
     String[] title = {"默认", "价格", "销量"};
     private ImageView mImg;
-    boolean flag=true;
+    boolean flag=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,8 +77,10 @@ public class Product_Activity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img:
-
-                break;
+                /*flag=!flag;
+                EventBean eventBean=new EventBean();
+                eventBean.setFlag(flag);
+                EventBus.getDefault().postSticky(eventBean);*/
             default:
                 break;
         }
@@ -105,8 +110,4 @@ public class Product_Activity extends AppCompatActivity implements View.OnClickL
             return title[position];
         }
     }
-
-
 }
-
-
