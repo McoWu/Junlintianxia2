@@ -16,6 +16,7 @@ public class RetrofitService {
 
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 
+
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
                     .baseUrl(API_BASE_URL)
