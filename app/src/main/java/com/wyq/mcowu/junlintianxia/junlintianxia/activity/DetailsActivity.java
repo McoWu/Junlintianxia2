@@ -24,6 +24,8 @@ import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.wyq.mcowu.junlintianxia.R;
 import com.wyq.mcowu.junlintianxia.junlintianxia.Immersive.Immersives;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.ShopBean;
+import com.wyq.mcowu.junlintianxia.junlintianxia.db.dao.MyUserDao;
 import com.wyq.mcowu.junlintianxia.junlintianxia.utils.Defaultcontent;
 import com.wyq.mcowu.junlintianxia.junlintianxia.utils.ShareUtils;
 
@@ -39,6 +41,13 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     private RadioButton mShareRb;
     private RadioButton mAddRb;
     private RadioButton mBuyRb;
+    private MyUserDao dao;
+    private String img;
+    private String name;
+    private double price;
+    private int id;
+    private int i=1;
+
     @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +77,15 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void initIntent() {
-        int id = getIntent().getIntExtra("id", 1);
-        String img = getIntent().getStringExtra("img");
-        String name = getIntent().getStringExtra("name");
-        double price = getIntent().getDoubleExtra("price", 0);
+        id = getIntent().getIntExtra("id", 1);
+        img = getIntent().getStringExtra("img");
+        name = getIntent().getStringExtra("name");
+        price = getIntent().getDoubleExtra("price", 0);
         Log.i(TAG, "onCreate: " + id + "" + img + name + price + "");
         mImg.setImageURI(Uri.parse(img));
         mTitle.setText(name);
         mPrice.setText("￥" + price + "");
+        dao = new MyUserDao(this);
     }
 
     @Override
@@ -85,6 +95,25 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
                 PopupWindow();
                 break;
             case R.id.rb_add:
+                /*
+                * McoWu
+                * 在查询之前查询一下数据库是否有该商品，有的话修改数量
+                * */
+                boolean b = dao.queryUserByshopId(id);
+                if(b){
+                    dao.update(id,i++);
+                    Toast.makeText(this, "加购成功", Toast.LENGTH_SHORT).show();
+                }else{
+                    ShopBean shopBean = new ShopBean();
+                    shopBean.setShopId(id);
+                    shopBean.setImg(img);
+                    shopBean.setName(name);
+                    shopBean.setPrice(price);
+                    //数量默认为一
+                    shopBean.setNum(i);
+                    dao.insertUser(shopBean);
+                    Toast.makeText(this, "加购成功", Toast.LENGTH_SHORT).show();
+                }
 
                 break;
             case R.id.rb_buy:

@@ -71,7 +71,18 @@ public class MyUserDao {
         List<ShopBean> list = qb.list();
         return list;
     }
-
+    public boolean queryUserByshopId(int shopId) {
+        DaoMaster daoMaster = new DaoMaster(DBManager.getInstance(context).getReadableDatabase());
+        DaoSession daoSession = daoMaster.newSession();
+        ShopBeanDao shopBeanDao = daoSession.getShopBeanDao();
+        QueryBuilder<ShopBean> qb = shopBeanDao.queryBuilder();
+        QueryBuilder<ShopBean> where = qb.where(ShopBeanDao.Properties.ShopId.eq(shopId));
+        long count = where.count();
+        if(count>0){
+            return true;
+        }
+        return false;
+    }
     /**
      * 更新一条记录
      *
@@ -94,6 +105,25 @@ public class MyUserDao {
         DaoSession daoSession = daoMaster.newSession();
         ShopBeanDao shopBeanDao = daoSession.getShopBeanDao();
         shopBeanDao.delete(user);
+    }
+
+    /*
+    * 修改数据
+    * */
+    public void update(int shopId,int num){
+       DaoMaster daoMaster2 = new DaoMaster(DBManager.getInstance(context).getReadableDatabase());
+        DaoSession daoSession1 = daoMaster2.newSession();
+        ShopBeanDao shopBeanDao1 = daoSession1.getShopBeanDao();
+        QueryBuilder<ShopBean> qb = shopBeanDao1.queryBuilder();
+        QueryBuilder<ShopBean> where = qb.where(ShopBeanDao.Properties.ShopId.eq(shopId));
+        List<ShopBean> list = where.list();
+        ShopBean shopBean = list.get(0);
+        shopBean.setNum(num);
+        DaoMaster daoMaster = new DaoMaster(DBManager.getInstance(context).getWirteableDatabase());
+        DaoSession daoSession = daoMaster.newSession();
+        ShopBeanDao shopBeanDao = daoSession.getShopBeanDao();
+        shopBeanDao.update(shopBean);
+
     }
 
 }

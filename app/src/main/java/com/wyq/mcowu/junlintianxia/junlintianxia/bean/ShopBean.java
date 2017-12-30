@@ -2,6 +2,7 @@ package com.wyq.mcowu.junlintianxia.junlintianxia.bean;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Index;
 import org.greenrobot.greendao.annotation.Generated;
 
 /**
@@ -13,6 +14,8 @@ import org.greenrobot.greendao.annotation.Generated;
 public class ShopBean {
     @Id(autoincrement = true)
     private Long id;
+    @Index(unique = true)
+    private int shopId;
     private String name;
     private String img;
     private double price;
@@ -48,16 +51,23 @@ public class ShopBean {
     public void setName(String name) {
         this.name = name;
     }
+    public int getShopId() {
+        return this.shopId;
+    }
+    public void setShopId(int shopId) {
+        this.shopId = shopId;
+    }
     public Long getId() {
         return this.id;
     }
     public void setId(Long id) {
         this.id = id;
     }
-    @Generated(hash = 770109052)
-    public ShopBean(Long id, String name, String img, double price, int num,
-            boolean flag) {
+    @Generated(hash = 1397499092)
+    public ShopBean(Long id, int shopId, String name, String img, double price,
+            int num, boolean flag) {
         this.id = id;
+        this.shopId = shopId;
         this.name = name;
         this.img = img;
         this.price = price;
@@ -67,5 +77,7 @@ public class ShopBean {
     @Generated(hash = 748345971)
     public ShopBean() {
     }
+
+   
 
 }
