@@ -15,9 +15,13 @@ import android.widget.TextView;
 import com.wyq.mcowu.junlintianxia.R;
 import com.wyq.mcowu.junlintianxia.junlintianxia.adapter.HotAdapter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.base.BaseFragment;
+import com.wyq.mcowu.junlintianxia.junlintianxia.bean.EventBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.HotBean;
 import com.wyq.mcowu.junlintianxia.junlintianxia.presenter.HotPresenter;
 import com.wyq.mcowu.junlintianxia.junlintianxia.view.view.IHotView;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
@@ -30,8 +34,8 @@ public class Fragment_Default extends BaseFragment<HotPresenter> implements IHot
     private int id;
     private RecyclerView mRv;
     private TextView mImg;
-    private static final int  Type_LIST=0;
-    private static final int  Type_GRID=1;
+    private Boolean flag;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -62,5 +66,7 @@ public class Fragment_Default extends BaseFragment<HotPresenter> implements IHot
         HotAdapter adapter = new HotAdapter(getActivity(), list);
         mRv.setAdapter(adapter);
     }
+
+
 
 }

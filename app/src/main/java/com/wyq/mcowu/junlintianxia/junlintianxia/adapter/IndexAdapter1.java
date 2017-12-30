@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 
 import com.wyq.mcowu.junlintianxia.R;
 import com.wyq.mcowu.junlintianxia.junlintianxia.bean.IndexBean;
@@ -72,6 +73,7 @@ public class IndexAdapter1 extends RecyclerView.Adapter< IndexAdapter1.MyViewHol
                 //旋转动画
                 ObjectAnimator animator =  ObjectAnimator.ofFloat(view, "rotationX", 0.0F, 360.0F)
                         .setDuration(1000);
+                animator.setInterpolator(new AccelerateInterpolator());
                 animator.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {

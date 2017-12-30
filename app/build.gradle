@@ -75,6 +75,7 @@ dependencies {
     compile 'com.xhb:xbanner:1.2.2'
     implementation files('libs/SocialSDK_QQ_Simplify.jar')
     implementation 'com.android.support:design:26.1.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
     compile 'org.greenrobot:greendao:3.0.1'
     compile 'org.greenrobot:greendao-generator:3.0.0'
 
