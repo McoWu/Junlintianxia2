@@ -2,6 +2,7 @@ package com.wyq.mcowu.junlintianxia.junlintianxia.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -20,7 +21,7 @@ import java.util.List;
  * 首页适配器二
  */
 
-public class IndexAdapter2 extends RecyclerView.Adapter< IndexAdapter2.MyViewHolder> implements View.OnClickListener{
+public class IndexAdapter2 extends RecyclerView.Adapter< IndexAdapter2.MyViewHolder>{
     private Context context;
     List<IndexBean> bean=new ArrayList<>();
 
@@ -30,32 +31,20 @@ public class IndexAdapter2 extends RecyclerView.Adapter< IndexAdapter2.MyViewHol
         this.bean = bean;
     }
 
-    //再实例，然后创建方法
-    private OnItemClickListener mOnItemClickListener = null;
-    //点击事件
-    @Override
-    public void onClick(View view) {
-        if (mOnItemClickListener!=null){
-            mOnItemClickListener.onItemClick(view, (Integer) view.getTag());
-        }
+    OnItemClickListener listener;
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
 
     }
-    public static interface OnItemClickListener {
-        void onItemClick(View view, int position);
-    }
-
-
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view=View.inflate(context, R.layout.sy_rcy_item_two,null);
         MyViewHolder holder=new MyViewHolder(view);
-        //调用点击
-        view.setOnClickListener(this);
 
         return holder;
     }
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
        // holder.tv.setText(bean.get(position).getCpOne().getTitle());
        // Log.i(TAG, "onBindViewHolder: "+bean.getTitle());
@@ -65,29 +54,48 @@ public class IndexAdapter2 extends RecyclerView.Adapter< IndexAdapter2.MyViewHol
                 .setAutoPlayAnimations(true)
                 .build();
         holder.iv.setController(ff);
-
-
+        holder.iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id = bean.get(position).getCpOne().getId();
+                listener.OnItemClick(holder.iv,id);
+                Log.i("============id", "onClick: "+id);
+            }
+        });
           //首页图二
         DraweeController ffs= Fresco.newDraweeControllerBuilder()
                 .setUri(bean.get(position).getCpTwo().getImgUrl())
                 .setAutoPlayAnimations(true)
                 .build();
         holder.ivs.setController(ffs);
-        //把条目的下标position设置给holder
-        holder.itemView.setTag(position);
+        holder.ivs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id = bean.get(position).getCpTwo().getId();
+                listener.OnItemClick(holder.ivs,id);
+                Log.i("============id1", "onClick: "+id);
+
+            }
+        });
+
+
        //首页图三
         DraweeController ffss= Fresco.newDraweeControllerBuilder()
                 .setUri(bean.get(position).getCpThree().getImgUrl())
                 .setAutoPlayAnimations(true)
                 .build();
         holder.ivs2.setController(ffss);
-        //把条目的下标position设置给holder
-        holder.itemView.setTag(position);
+        holder.ivs2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id = bean.get(position).getCpThree().getId();
+                listener.OnItemClick(holder.ivs2,id);
+                Log.i("============id2", "onClick: "+id);
+
+            }
+        });
     }
 
-    public void setmOnItemClickListener(OnItemClickListener listener){
-        this.mOnItemClickListener=listener;
-    }
 
     @Override
     public int getItemCount() {
@@ -114,6 +122,9 @@ public class IndexAdapter2 extends RecyclerView.Adapter< IndexAdapter2.MyViewHol
 
 
     }
-
+    public interface OnItemClickListener{
+        void OnItemClick(View view,int position);
     }
+
+}
 

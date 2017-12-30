@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/img"
+            android:layout_width="@dimen/x130"
+            android:layout_height="@dimen/y100"
+            android:padding="@dimen/y10"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="标题"
+                android:padding="@dimen/y10"
+                />
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="price"
+                android:padding="@dimen/y10"
+                android:textColor="@color/colorAccent"
+
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
