@@ -15,6 +15,7 @@ import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Find;
 import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Index;
 import com.wyq.mcowu.junlintianxia.junlintianxia.fragment.Fragment_Mine;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         }
         transaction.show(flag);
         transaction.commit();
+        new ArrayList<>();
     }
-
 
 }

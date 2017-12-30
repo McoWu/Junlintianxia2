@@ -85,7 +85,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
                 PopupWindow();
                 break;
             case R.id.rb_add:
-                // TODO 17/12/26
+
                 break;
             case R.id.rb_buy:
                 // TODO 17/12/26
