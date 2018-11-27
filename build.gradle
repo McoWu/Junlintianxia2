@@ -5,7 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-       /* maven {
+     /*   maven {
             url "http://mvn.mob.com/android"
         }*/
 
@@ -24,6 +24,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 

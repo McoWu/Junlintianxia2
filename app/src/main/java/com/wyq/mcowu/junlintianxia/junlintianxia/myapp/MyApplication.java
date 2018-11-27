@@ -2,8 +2,11 @@ package com.wyq.mcowu.junlintianxia.junlintianxia.myapp;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.lsh.packagelibrary.CasePackageApp;
 import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
@@ -17,7 +20,7 @@ import java.util.List;
  * 本类作用:
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends CasePackageApp {
     public static List<Activity> activities = new ArrayList<>();
 
     @Override
@@ -29,6 +32,7 @@ public class MyApplication extends Application {
         UMShareAPI.get(this);
         //开启debug模式，方便定位错误，具体错误检查方式可以查看http://dev.umeng.com/social/android/quick-integration的报错必看，正式发布，请关闭该模式
         Config.DEBUG = true;
+        MultiDex.install((Context)this);
     }
 
     //各个平台的配置
